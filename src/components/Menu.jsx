@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Item from "./Item";
 import OrderModal from "./OrderModal";
+import { useMenu } from "../context/menuContext.jsx";
 
-function Menu({ menu, cart, setCart }) {
+function Menu({ cart, setCart }) {
   const [modalOn, setModalOn] = useState(false);
   const [modalMenu, setModalMenu] = useState(null);
+  const { menu } = useMenu();
   if (!menu)
     return (
       <div style={{ textAlign: "center", margin: "80px" }}>
